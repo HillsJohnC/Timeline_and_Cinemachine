@@ -21,6 +21,7 @@ public class Zoom_Target : MonoBehaviour
         {
             SwitchTarget(); 
         }
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             float FOV = VC1.GetComponent<CinemachineVirtualCamera>().m_Lens.FieldOfView -= 20;
