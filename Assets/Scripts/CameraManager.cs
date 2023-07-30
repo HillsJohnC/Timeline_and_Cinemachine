@@ -1,33 +1,57 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using Cinemachine;
+using UnityEngine;
 
 public class CameraManager : MonoBehaviour
 {
     [SerializeField] private GameObject[] _cameras;
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
+    public int _currentCamera;
+    public bool _canSwitchCams;
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (_canSwitchCams == true)
+        {
+            if (Input.GetKeyDown(KeyCode.C))
+            {
+                _currentCamera++;
+                if (_currentCamera >= _cameras.Length)
+                {
+                    _currentCamera = 1;
+                }
+                SetLowCamPriorities();
+                SetCurrentCamera();
+            }
+        }
+
     }
 
-    public void ResetAllCams()
+    public void SetLowCamPriorities()
     {
         foreach (var c in _cameras)
         {
-            c.GetComponent<CinemachineVirtualCamera>().Priority = 10;
+            if (c.GetComponent<CinemachineVirtualCamera>())
+            {
+                c.GetComponent<CinemachineVirtualCamera>().Priority = 10;
+            }
+
+            if (c.GetComponent<CinemachineBlendListCamera>())
+            {
+                c.GetComponent<CinemachineBlendListCamera>().Priority = 10;
+            }
         }
     }
 
-    public void SetMasterCam(int cam)
+    public void SetCurrentCamera()
     {
-        _cameras[cam].GetComponent<CinemachineVirtualCamera>().Priority = 15;
+        if (_cameras[_currentCamera].GetComponent<CinemachineVirtualCamera>())
+        {
+            _cameras[_currentCamera].GetComponent<CinemachineVirtualCamera>().Priority = 15;
+        }
+
+        if (_cameras[_currentCamera].GetComponent<CinemachineBlendListCamera>())
+        {
+            _cameras[_currentCamera].GetComponent<CinemachineBlendListCamera>().Priority = 15;
+        }
     }
 }
