@@ -2,9 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class BulbBlowingOut : MonoBehaviour
+public class Cube_01 : MonoBehaviour
 {
-    [SerializeField] public GameObject _director;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,9 +13,11 @@ public class BulbBlowingOut : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       if (Input.GetKeyDown(KeyCode.K))
-        {
-            _director.SetActive(true);
-        }
+
+    }
+
+    public void Cube01()
+    {
+        Debug.Log("This is cube 01 debug");
     }
 }
