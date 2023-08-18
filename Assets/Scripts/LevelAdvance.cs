@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class Cube_02 : MonoBehaviour
+public class LevelAdvance : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -16,8 +17,8 @@ public class Cube_02 : MonoBehaviour
         
     }
 
-    public void Cube02()
+    public void LoadNextLevel()
     {
-        Debug.Log("This is cube 02 debug");
+        SceneManager.LoadScene("Scene2");
     }
 }
