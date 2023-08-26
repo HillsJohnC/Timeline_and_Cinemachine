@@ -508,6 +508,8 @@ PlayableDirector:
     value: {fileID: 0}
   - key: {fileID: 8016617742730007096, guid: 753012e35daa6a34f86980e1d8e502f3, type: 2}
     value: {fileID: 961169739}
+  - key: {fileID: 5471884617925799537, guid: 753012e35daa6a34f86980e1d8e502f3, type: 2}
+    value: {fileID: 1950524716}
   m_ExposedReferences:
     m_References:
     - 34b3fc7b98758274684f4daa6424c881: {fileID: 0}
@@ -1188,6 +1190,11 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
+--- !u!95 &1950524716 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 6982812146204527121, guid: 64dce48905ffd9b4293e595fa6941544, type: 3}
+  m_PrefabInstance: {fileID: 445454463}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2044370689
 GameObject:
   m_ObjectHideFlags: 0
